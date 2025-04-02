@@ -1,2 +1,4 @@
-# CR_PO
-Testes de funcionalidades para o trabalho
+# CR Comunicação - MVP
+
+Interface web para envio de mensagens via múltiplos canais.
+Pronto para deploy no GitHub Pages.
