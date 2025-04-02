@@ -83,7 +83,7 @@ body {
 }
 
 #form-container form {
-  max-width: 700px;
+  max-width: 800px;
 }
 
 #formFields > div {
@@ -104,7 +104,8 @@ body {
 }
 
 #form-container input,
-#form-container textarea {
+#form-container textarea,
+#form-container select {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -126,55 +127,24 @@ body {
   background: #005da8;
 }
 
-#new-contact {
-  margin-bottom: 30px;
-  background: #005da8;
-  padding: 15px;
-  border-radius: 10px;
+.contact-header {
+  background: #e3effc;
+  border: 1px solid #c0d7ee;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-#new-contact h3 {
-  margin-top: 0;
-  color: white;
+.contact-header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.checkbox-group {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-#channel-actions {
-  margin-top: 20px;
-}
-
-#channel-actions button {
-  margin-right: 10px;
-  background: #888;
-}
-
-#channel-actions button:hover {
-  background: #555;
+.contact-header li {
+  margin-bottom: 6px;
 }
 
 .tab-content {
   display: block;
-}
-
-@media (min-width: 768px) {
-  #formFields > div {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-
-  #formFields label {
-    width: 100%;
-  }
-
-  #formFields input,
-  #formFields textarea {
-    flex: 1 1 45%;
-    min-width: 0;
-  }
 }
