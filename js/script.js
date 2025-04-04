@@ -2,9 +2,9 @@ const contatos = [
   {
     nome: "João da Silva",
     classificacao: "Beneficiário",
-    carteirinha: "AM123456789",
+    carteirinha: "123456789",
     idade: 42,
-    plano: "Amil 400",
+    plano: "Plano 400",
     acomodacao: "Apartamento",
     celular: "(11) 91234-5678",
     email: "joao@email.com",
@@ -22,12 +22,12 @@ const contatos = [
 
 const templates = {
   whatsapp: {
-    "Conversar agora": `Somos da Central de Regulação da Amil. Estamos entrando em contato pois temos informações importantes sobre uma solicitação médica (pedido: {{NUM_PEDIDO}}) registrada em seu nome. Podemos conversar?\n----\nCaso desconheça este pedido, por favor, desconsidere esta mensagem.`,
-    "Notificação genérica": `Somos da Central de Regulação da Amil. Informamos que o status do seu pedido {{NUM_PEDIDO}} foi atualizado. Utilize os canais de atendimento oficiais da Amil para obter mais informações.\n\n💻 Portal Amil: https://institucional.amil.com.br\n📍 App iOS: https://apps.apple.com/br/app/amilclientes/id471890526\n📍 App Android: https://play.google.com/store/apps/details?id=br.com.amil.beneficiarios&pli=1\nAté mais! 👋\n----\nCaso desconheça este pedido, por favor, desconsidere esta mensagem.`,
-    "Solicitação de Documentação (Beneficiário)": `Solicitação de Documento (Notificação automática)\nProcedimento: {{NOME_PROC}}\nCaro(a) {{NOME_CLIENTE}}:\nPara seguirmos com a análise de autorização do seu procedimento, precisamos do documento {{NOME_DOC}} até a data limite de {{DT_LIMITE}}.\n\nEle pode ser enviado por você para o email {{EMAIL_DOC}} ou anexado pelo seu médico no Portal do Credenciado.\n\nAtenciosamente,\nCentral de Regulação Amil`,
-    "Status do Pedido": `Caro(a) {{NOME_CLIENTE}}:\nSeu pedido de autorização segue em análise. Estamos trabalhando para finalizar dentro do prazo.\nPrazo estimado: {{DT_CONCLUSAO}}.\nVocê pode acompanhar pelo Portal Beneficiário.\n\nAtenciosamente,\nCentral de Regulação Amil`,
-    "Solicitação de Documentação (Prestador)": `Olá {{Nome do Médico}}, Para seguirmos com a análise de autorização do pedido do seu paciente {{Nome do Paciente}} no pedido {{Numero do Pedido}}, precisamos do documento {{NOME_DOC}} até a data limite de {{DT_LIMITE}}. Ele pode ser enviado por você para o email {{EMAIL_DOC}} ou anexado, diretamente ao seu pedido, através do Portal do Credenciado.\n\nAtenciosamente,\nCentral de Regulação Amil`,
-    "Negociação (Prestador)": `Olá {{Nome do Médico}}, Somos da Central de Regulação da Amil. Estamos entrando em contato pois temos informações importantes sobre os itens solicitados no pedido: {{NUM_PEDIDO}}. Podemos conversar?\n----\nCaso desconheça este pedido, por favor, desconsidere esta mensagem.`
+    "Conversar agora": `Somos do Plano de Saúde. Estamos entrando em contato pois temos informações importantes sobre uma solicitação médica (pedido: {{NUM_PEDIDO}}) registrada em seu nome. Podemos conversar?\n----\nCaso desconheça este pedido, por favor, desconsidere esta mensagem.`,
+    "Notificação genérica": `Somos do Plano de Saúde. Informamos que o status do seu pedido {{NUM_PEDIDO}} foi atualizado. Utilize os canais de atendimento oficiais do plano para obter mais informações.\n\n💻 Portal: https://seuplano.com.br\n📍 App iOS: https://apps.apple.com/br/app/seuplano/id471890526\n📍 App Android: https://play.google.com/store/apps/SeuPlano\nAté mais! 👋\n----\nCaso desconheça este pedido, por favor, desconsidere esta mensagem.`,
+    "Solicitação de Documentação (Beneficiário)": `Solicitação de Documento (Notificação automática)\nProcedimento: {{NOME_PROC}}\nCaro(a) {{NOME_CLIENTE}}:\nPara seguirmos com a análise de autorização do seu procedimento, precisamos do documento {{NOME_DOC}} até a data limite de {{DT_LIMITE}}.\n\nEle pode ser enviado por você para o email {{EMAIL_DOC}} ou anexado pelo seu médico no Portal .\n\nAtenciosamente,\nRegulação`,
+    "Status do Pedido": `Caro(a) {{NOME_CLIENTE}}:\nSeu pedido de autorização segue em análise. Estamos trabalhando para finalizar dentro do prazo.\nPrazo estimado: {{DT_CONCLUSAO}}.\nVocê pode acompanhar pelo Portal.\n\nAtenciosamente,\nRegulação`,
+    "Solicitação de Documentação (Prestador)": `Olá {{Nome do Médico}}, Para seguirmos com a análise de autorização do pedido do seu paciente {{Nome do Paciente}} no pedido {{Numero do Pedido}}, precisamos do documento {{NOME_DOC}} até a data limite de {{DT_LIMITE}}. Ele pode ser enviado por você para o email {{EMAIL_DOC}} ou anexado, diretamente ao seu pedido, através do Portal.\n\nAtenciosamente,\nRegulação`,
+    "Negociação (Prestador)": `Olá {{Nome do Médico}}, Somos da Regulação. Estamos entrando em contato pois temos informações importantes sobre os itens solicitados no pedido: {{NUM_PEDIDO}}. Podemos conversar?\n----\nCaso desconheça este pedido, por favor, desconsidere esta mensagem.`
   }
 };
 
@@ -126,7 +126,7 @@ function aplicarTemplate(canal, select) {
     .replace(/{{NOME_DOC}}/g, "Pedido Médico")
     .replace(/{{DT_LIMITE}}/g, "31/04/2025")
     .replace(/{{DT_CONCLUSAO}}/g, "01/05/2025")
-    .replace(/{{EMAIL_DOC}}/g, "documentos@amil.com.br");
+    .replace(/{{EMAIL_DOC}}/g, "documentos@plano.com.br");
   document.getElementById(`msg-${canal}`).value = texto;
 }
 
